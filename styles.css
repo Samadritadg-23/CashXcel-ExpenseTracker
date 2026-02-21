@@ -724,6 +724,7 @@ hr {
     font-family: 'Times New Roman', Times, serif;
     letter-spacing: 0px;
     font-style: italic;
+    text-align: center;
 }
 
 .wallet-body {
@@ -792,7 +793,7 @@ hr {
 }
 
 #savings>h3 {
-    color: white;
+    color: rgb(255, 255, 255);
     font-family: "Bebas Neue", sans-serif;
     font-size: 30px;
     text-align: center;
@@ -843,16 +844,17 @@ hr {
 }
 
 .savings-box>h3 {
-    font-size: 30px;
+    font-size: 20px;
     letter-spacing: 2px;
     margin-top: 20px;
     margin-bottom: 10px;
+    text-align: center;
 }
 
 #savings_input,
 #savings_description {
-    width: 70%;
-    margin-top: 20px;
+    width: 100%;
+    margin-top: 18px;
     padding: 10px;
     font-size: 15px;
     border-radius: 8px;
@@ -862,7 +864,7 @@ hr {
 }
 
 #save_savings_btn {
-    width: 70%;
+    width: 100%;
     margin-top: 25px;
     padding: 10px;
     background-color: rgb(13, 13, 120);
@@ -1436,6 +1438,12 @@ hr {
     }
     .modal{
         padding-left: var(--mobile-sidebar-width);
+    }
+    .savings-box{
+        width: calc(100vw - 70px);
+        max-width: 340px;
+        padding: 24px 20px;
+        border-radius: 12px;
     }
 
 
