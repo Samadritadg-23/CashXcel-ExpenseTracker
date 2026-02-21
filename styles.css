@@ -1,8 +1,13 @@
+:root{
+    --mobile-sidebar-width: 35px;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 
 html,
 body {
@@ -1198,6 +1203,11 @@ hr {
 }
 
 @media (max-width: 767px) {
+    .modal-box{
+        width: calc(100vw - 70px); 
+        max-width: 340px;
+      
+    }
 
 
     .remove_limit {
@@ -1424,6 +1434,9 @@ hr {
     #insights>h3 {
         font-size: 35px;
     }
+    .modal{
+        padding-left: var(--mobile-sidebar-width);
+    }
 
 
 }
@@ -1435,10 +1448,10 @@ hr {
 }
 
 @media (max-width: 555px) {
-    .modal-box{
+    /* .modal-box{
         width: 92vw;
         max-width: 360px;
-    }
+    } */
 
     
 
