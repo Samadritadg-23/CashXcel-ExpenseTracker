@@ -1,0 +1,255 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+body {
+    background-image: url("backgroundimg.png");
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    padding: 50px 0 50px 0;
+    position: relative;
+    
+}
+.back{
+    position: absolute;
+    top:25px;
+    left:27px;
+    color: rgb(218, 215, 215);
+    font-size: 15px;
+    font-style: italic;
+}
+.dashboard{
+    position: absolute;
+    top:20px;
+    left:43px;
+    color: rgb(218, 215, 215);
+    font-size: 20px;
+    font-style: italic;
+    font-family: 'Times New Roman', Times, serif;
+}
+.dashboard:hover{
+    cursor: pointer;
+    text-decoration: underline;
+}
+.heading {
+    color: white;
+    font-size: 70px;
+    text-align: center;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    font-family: "Bebas Neue", sans-serif;
+}
+.search-bar{
+    display: flex;
+    justify-content: center;
+}
+#search_savings {
+    align-self: center;
+    width: 80%;
+    height: 50px;
+    padding: 20px;
+    border-radius: 40px;
+    font-size: 15px;
+    background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Search_Icon.svg/500px-Search_Icon.svg.png?20181016161702');
+    background-repeat: no-repeat;
+    background-size: 18px;
+    background-position: right;
+    background-position-x: 97%;
+}
+
+
+
+.all-savings{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+}
+.savings{
+    /* background: linear-gradient(346deg,#ffffff, rgb(215, 236, 255), rgb(215, 236, 255)); */
+    background-color: rgba(24, 42, 93, 0.853);
+    box-shadow: 0 0 3px 1px rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 80px;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 15px;
+    width: 80%;
+}
+.savings_details{
+    justify-content: space-between;
+    padding:10px 20px 0 20px;
+    height: 63%;
+    
+}
+#date_time{
+    padding: 6px 0 0 10px;
+    font-size: 13px;
+    font-weight: 100;
+    font-style: italic;
+    color: rgb(255, 255, 255);
+    
+}
+
+.savings_details_name{
+    display: flex;
+    flex-direction: row;
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 30px;
+    letter-spacing: 1.5px;
+    align-self: center;
+    color: rgb(255, 255, 255);
+}
+
+.savings_details>h6{
+    font-size: 27px;
+    position: absolute;
+    right: 20px;
+    bottom:15px;
+    align-self: center;
+    color: rgb(255, 255, 255);
+}
+.delete{
+    position: absolute;
+    top:12px;
+    right: 8px;
+    font-size: 10px;
+    color: rgb(176, 175, 175);
+}
+.delete:hover{
+    cursor: pointer;
+}
+.delete_modal{
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.65);
+    backdrop-filter: blur(3px);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+.delete_box{
+    width: 400px;
+    background-color: rgb(215, 213, 213);
+    border-radius: 10px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    text-align: center;
+}
+.delete_box>h2{
+    text-align: center;
+}
+.no-savings{
+    color: rgb(200, 199, 199);
+    font-family: "Bebas Neue", sans-serif;
+    text-align: center;
+    font-size: 40px;
+    font-style: italic;
+}
+.danger{
+    font-size: 23px;
+    color: rgb(161, 4, 4) !important;
+    
+}
+.delete_box>span{
+    background-color: rgba(255, 0, 0, 0.312);
+    height: 40px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+}
+.delete_box>h2{
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 2px;
+    margin-top: 10px;
+}
+.delete_box>p{
+    color: rgb(88, 88, 88);
+    font-style: italic;
+    line-height: 15px;
+    margin-bottom: 10px;
+}
+.buttons{
+    display: flex;
+    flex-direction: column;
+}
+.delete_box>.buttons>button{
+    height: 35px;
+    width: 300px;
+    border-radius: 5px;
+}
+#delete{
+    margin-bottom: 10px;
+    border: none;
+    background-color: rgb(161, 4, 4);
+    color: white;   
+}
+#dont-delete{
+    border: 0.5px solid black;
+}
+#delete:hover{
+    cursor: pointer;
+    background-color: rgb(127, 29, 29);
+}
+#dont-delete:hover{
+    cursor: pointer;
+    background-color: rgb(225, 223, 223);
+}
+
+
+/* RESPONSIVE */
+
+
+@media (max-width:585px){
+    .heading{
+        font-size: 40px;
+    }
+    .dashboard{
+        font-size: 15px;
+        top: 20px;
+    }
+    .back{
+        font-size: 10px;
+        left: 30px;
+        top: 23px;
+    }
+    #search_savings{
+        height: 15px;
+    }
+    
+    .savings{
+        margin-bottom: 15px;
+    }
+    .savings_details_name{
+        width: 75%;
+        font-size: 25px;
+    }
+    
+    .savings_details>h6{
+        font-size: 25px;
+    }
+}

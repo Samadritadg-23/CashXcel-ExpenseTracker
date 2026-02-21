@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense History</title>
+    <link rel="stylesheet" href="expense.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body>
+    <i class="fa-solid fa-angle-left back"></i>
+    <p class="dashboard">dashboard</p>
+    <h1 class="heading">Expense History</h1>
+    <div class="search-bar">
+        <input type="search" id="search_expense" placeholder="Search">
+    </div>
+    <input type="date" id="search_date">
+    <div class="search">
+        <p>Search by date:</p>
+        <i class="fa-regular fa-calendar calendar"></i>
+    </div>
+
+    <select class="all-filters">
+        <option value="" disabled selected id="Categories">Filter by categories</option>
+        <option value="clothes" class="clothes">clothes</option>
+        <option value="education" class="filters">education</option>
+        <option value="entertainment" class="filters">entertainment</option>
+        <option value="food" class="filters">food</option>
+        <option value="groceries" class="filters">groceries</option>
+        <option value="health" class="filters">health</option>
+        <option value="laundry" class="filters">laundry</option>
+        <option value="rent" class="filters">rent</option>
+        <option value="subscriptions" class="filters">subscriptions</option>
+        <option value="travel" class="filters">travel</option>
+        <option value="others" class="filters">others</option>
+    </select>
+    <div class="refresh_div">
+    </div>
+
+    <div class="all-expenses">
+        <!-- <div class="expense" data-color="green">
+            <header></header>
+            <h5 id="date_time">26th January 17:30</h5>
+            <section class="expense_details">
+                <div class="expense_details_name">
+                    <p>McD Burger</p><span>(Food)</span>
+                </div>
+                <h6>₹65</h6>
+            </section>
+            <i class="fa-solid fa-trash delete"></i>
+        </div>
+        <div class="expense" data-color="red">
+            <header></header>
+            <h5 id="date_time">22th January 17:30</h5>
+            <section class="expense_details">
+                <div class="expense_details_name">
+                    <p>Auto morning</p><span>(Travel)</span>
+                </div>
+                <h6>₹80</h6>
+            </section>
+        </div> -->
+    </div>
+
+    <!-- MODAL -->
+    <div class="delete_modal">
+        <div class="delete_box">
+            <span><i class="fa-solid fa-triangle-exclamation danger"></i></span>
+            <h2>Are you sure?</h2>
+            <p>This action cannot be undone. All values associated with this transaction will be lost.</p>
+            <div class="buttons">
+                <button id="delete">Yes, delete</button>
+                <button id="dont-delete">No, don't delete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCpc4JOtlja8-BS9B51SKMayXbs8A8b_hg",
+            authDomain: "cashxcel-expense-tracker.firebaseapp.com",
+            projectId: "cashxcel-expense-tracker",
+            storageBucket: "cashxcel-expense-tracker.firebasestorage.app",
+            messagingSenderId: "1082310746790",
+            appId: "1:1082310746790:web:572d482beba089f5550a67"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+    </script>
+    <script src="expense.js"></script>
+
+</body>
+
+</html>

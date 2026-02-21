@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Six+Caps&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="favicon.png">
+
+</head>
+
+<body>
+    <!-- SIDEBAR -->
+    <div class="mobile-sidebar-toggle">
+        <i class="fa-solid fa-bars" id="three_lines"></i>
+    </div>
+    <div class="side_bar">
+        <img src="2.png" id="app_name">
+        <div id="net_balance">
+            <h3 id="balance_heading">Your Net Balance:</h3>
+            <p id="balance_amount" data-color="green"></p>
+        </div>
+        <div id="add_expense">
+            <p class="plus_text">Add Expense</p>
+            <i class="fa-regular fa-plus plus"></i>
+        </div>
+        <div id="notes_section" class="sidebar-item">
+            <div id="notepad">
+                <header></header>
+            </div>
+            <div class="lines">
+                <hr>
+                <hr>
+                <hr>
+                <hr>
+                <hr>
+                <hr>
+            </div>
+            <div class="line_text">
+                <p>Note the debts here. Because "I'll pay you soon" is pure fiction...</p>
+            </div>
+            <i class="fa-solid fa-pencil pencil"></i>
+        </div>
+        <div id="savings">
+            <h2>Savings</h2>
+            <h3>corner</h3>
+            <div class="wallet-icon">
+                <div class="wallet-top-line"></div>
+                <div class="wallet-body">
+                    <div id="coin_container"></div>
+                </div>
+                <div class="wallet-flap"></div>
+                <div class="wallet-hole"></div>
+            </div>
+
+
+            <p id="savings_total">Saved: ₹0</p>
+        </div>
+
+
+
+        <div id="logout">
+            <p class="logout-text">Logout</p>
+            <i class="fa-solid fa-arrow-right-from-bracket logout-icon"></i>
+        </div>
+    </div>
+
+    <div id="info_icon" title="How to use CashXcel">
+        <i class="fa-solid fa-circle-info"></i>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="main_content">
+        <div class="welcome_content">
+            <h2 id="welcome_name"></h2>
+            <p id="welcome_message">Welcome to CashXcel.Your smart expense partner!</p>
+        </div>
+        <div class="limit_control">
+            <p id="limit_heading">CashXcel Limit Control</p>
+            <p id="set_expenditure_limit">Set expenditure limit</p>
+            <div class="limit_bar_container">
+                <div class="limit_bar_fill"></div>
+            </div>
+            <p id="percentage_used">0%</p>
+            <footer>
+                <p id="expenditure_limit"></p>
+                <p id="spent">Spent : ₹0</p>
+                <p id="left">Left : ₹0</p>
+            </footer>
+            <p id="remove_limit">Clear data</p>
+        </div>
+        <div class="section2">
+            <div class="section2_1">
+                <div class="section2_1_1" id="recent_expenses">
+                    <h2 id="recent_expenses_heading">Recent Expenses</h2>
+                    <i class="fa-solid fa-angle-right show_all_icon"></i>
+                    <p id="show_all">show all</p>
+                    <div class="all-expenses">
+                    </div>
+                </div>
+            </div>
+            <div class="section2_2">
+                <h3>SPENDING OVER TIME</h3>
+                <div id="toggle_btn">
+                    <div id="show_monthly">Monthly</div>
+                    <div id="show_daily">Daily</div>
+                </div>
+                <canvas id="lineChart" width="600" height="460"></canvas>
+            </div>
+
+
+        </div>
+        <div class="section3" id="insights">
+            <h3>Insights</h3>
+            <h4>(Check your insights for this month)</h4>
+            <ul id="insight1">
+
+            </ul>
+            <div id="insight2">
+
+            </div>
+        </div>
+    </div>
+    <!-- MODAL -->
+
+    <!-- EXPENSE MODAL -->
+    <div id="expense_modal" class="modal">
+        <div class="modal-box">
+            <span id="close-modal">&times;</span>
+            <div id="modal_step1">
+                <h4>Select expense type</h4>
+                <button class="modal-button" id="yougave-button">You Gave</button>
+                <button class="modal-button" id="yougot-button">You Got</button>
+            </div>
+            <div id="modal-you-gave" class="modal-section">
+                <h5 id="heading_yougavegot">You Gave</h5>
+                <label>Select category</label>
+                <select id="gave_category">
+                    <option value="" disabled selected>Select</option>
+                    <option value="food">Food</option>
+                    <option value="travel">Travel</option>
+                    <option value="clothes">Clothes</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="education">Education</option>
+                    <option value="groceries">Groceries</option>
+                    <option value="health">Health</option>
+                    <option value="laundry">Laundry</option>
+                    <option value="subscriptions">Subscriptions</option>
+                    <option value="rent">Rent</option>
+                    <option value="others">Others</option>
+                </select>
+
+                <label>Amount</label>
+                <input type="number" id="gave_amount">
+
+                <label>Description</label>
+                <input type="text" id="gave_description">
+
+                <label>Date</label>
+                <input type="date" id="gave_date">
+
+                <button id="save_gave" class="save_btn">Save</button>
+            </div>
+            <div id="modal-you-got" class="modal-section">
+                <h5 id="heading_yougavegot">You Got</h5>
+
+                <label>Amount</label>
+                <input type="number" id="got_amount">
+
+                <label>Description</label>
+                <input type="text" id="got_description">
+                <label>Date</label>
+                <input type="date" id="got_date">
+                <div class="save_btns_got">
+                    <button id="save_got" class="save_btn">Save only</button>
+                    <button id="save_got_reflect" class="save_btn">Save & reduce expenditure</button>
+                </div>
+
+                
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- LIMIT CONTROL MODAL -->
+    <div id="limit_control_modal" class="limit_modal">
+        <div class="modal-box">
+            <span id="close-modal-limit">&times;</span>
+            <div id="set_limit">
+                <h6>Set Your Budget</h6>
+                <p>edit it anytime you want</p>
+                <input type="number" id="limit_amount" placeholder="Enter amount">
+                <div class="limit_date">
+                    <label>Track from date:</label>
+                    <input type="date" id="limit_start_date">
+                </div>
+                <p id="note">(Note: Setting limit doesn't affect Net Balance)</p>
+
+                <button class="save_btn" id="save_limit">Save</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- NOTES MODAL -->
+    <div id="notes_modal" class="modal">
+        <div class="modal-box notes-box">
+            <span id="close_notes_modal">&times;</span>
+            <h3 id="notes_heading">Your Notes</h3>
+            <textarea id="notes_textarea" placeholder="Write your notes here..."></textarea>
+            <button id="save_notes_btn" class="save_btn">Save Notes</button>
+        </div>
+    </div>
+
+
+    <!-- SAVINGS MODAL -->
+
+    <div id="savings_modal" class="modal">
+        <div class="modal-box savings-box">
+            <i class="fa-solid fa-angle-right show_all_icon"></i>
+            <span id="show_all" class="show_all_savings">show all</span>
+            <h3>How much did you save today?</h3>
+            <p>(This won't affect your balance)</p>
+            <input type="number" id="savings_input" placeholder="Amount saved today">
+            <input type="text" id="savings_description" placeholder="Description">
+            <button id="save_savings_btn" class="save_btn">Save Savings</button>
+        </div>
+    </div>
+
+    <!-- INFO MODAL -->
+    <div id="info_modal" class="modal">
+        <div class="modal-box info-box">
+            <span id="close_info">&times;</span>
+
+            <h3>How to use CashXcel</h3>
+
+            <ul class="info_list">
+                <li>Set a spending limit to track expenses (balance stays unchanged).</li><br>
+                <li>When adding income (salary, pocket money, etc.), choose <b>Save only</b>.This increases your balance
+                    without affecting your spending limit.</li><br>
+                <li>If someone owes you money, click the <b>pen icon</b> in the sidebar and note it down!</li><br>
+                <li>Track money you set aside in the <b>savings corner!</b></li>
+
+            </ul>
+        </div>
+    </div>
+
+    
+
+<!-- Firebase SDK -->
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyCpc4JOtlja8-BS9B51SKMayXbs8A8b_hg",
+  authDomain: "cashxcel-expense-tracker.firebaseapp.com",
+  projectId: "cashxcel-expense-tracker",
+  storageBucket: "cashxcel-expense-tracker.firebasestorage.app",
+  messagingSenderId: "1082310746790",
+  appId: "1:1082310746790:web:572d482beba089f5550a67"
+};
+
+firebase.initializeApp(firebaseConfig);
+const auth = firebase.auth();
+const db = firebase.firestore();
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>

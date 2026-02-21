@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savings history</title>
+    <link rel="stylesheet" href="savings.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/png" href="favicon.png">
+</head>
+
+<body>
+    <i class="fa-solid fa-angle-left back"></i>
+    <p class="dashboard">dashboard</p>
+    <h1 class="heading">Savings History</h1>
+    <div class="search-bar">
+        <input type="search" id="search_savings" placeholder="Search">
+    </div>
+    <div class="all-savings">
+        <!-- <div class="savings">
+            <h5 id="date_time">26th January 17:30</h5>
+            <section class="savings_details">
+                <p class="savings_details_name">Auto money</p>
+                <h6>₹65</h6>
+            </section>
+            <i class="fa-solid fa-trash delete"></i>
+        </div> -->
+
+    </div>
+
+    <div class="delete_modal">
+        <div class="delete_box">
+            <span><i class="fa-solid fa-triangle-exclamation danger"></i></span>
+            <h2>Are you sure?</h2>
+            <p>This action cannot be undone. All values associated with this transaction will be lost.</p>
+            <div class="buttons">
+                <button id="delete">Yes, delete</button>
+                <button id="dont-delete">No, don't delete</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCpc4JOtlja8-BS9B51SKMayXbs8A8b_hg",
+            authDomain: "cashxcel-expense-tracker.firebaseapp.com",
+            projectId: "cashxcel-expense-tracker",
+            storageBucket: "cashxcel-expense-tracker.firebasestorage.app",
+            messagingSenderId: "1082310746790",
+            appId: "1:1082310746790:web:572d482beba089f5550a67"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+    </script>
+
+    <script src="savings.js"></script>
+</body>
+
+</html>
