@@ -150,49 +150,55 @@
             </div>
             <div id="modal-you-gave" class="modal-section">
                 <h5 id="heading_yougavegot">You Gave</h5>
-                <label>Select category</label>
-                <select id="gave_category">
-                    <option value="" disabled selected>Select</option>
-                    <option value="food">Food</option>
-                    <option value="travel">Travel</option>
-                    <option value="clothes">Clothes</option>
-                    <option value="entertainment">Entertainment</option>
-                    <option value="education">Education</option>
-                    <option value="groceries">Groceries</option>
-                    <option value="health">Health</option>
-                    <option value="laundry">Laundry</option>
-                    <option value="subscriptions">Subscriptions</option>
-                    <option value="rent">Rent</option>
-                    <option value="others">Others</option>
-                </select>
+                <div class="form-content">
+                    <label>Select category</label>
+                    <select id="gave_category">
+                        <option value="" disabled selected>Select</option>
+                        <option value="food">Food</option>
+                        <option value="travel">Travel</option>
+                        <option value="clothes">Clothes</option>
+                        <option value="entertainment">Entertainment</option>
+                        <option value="education">Education</option>
+                        <option value="groceries">Groceries</option>
+                        <option value="health">Health</option>
+                        <option value="laundry">Laundry</option>
+                        <option value="subscriptions">Subscriptions</option>
+                        <option value="rent">Rent</option>
+                        <option value="others">Others</option>
+                    </select>
 
-                <label>Amount</label>
-                <input type="number" id="gave_amount">
+                    <label>Amount</label>
+                    <input type="number" id="gave_amount">
 
-                <label>Description</label>
-                <input type="text" id="gave_description">
+                    <label>Description</label>
+                    <input type="text" id="gave_description">
 
-                <label>Date</label>
-                <input type="date" id="gave_date">
+                    <label>Date</label>
+                    <input type="date" id="gave_date">
 
-                <button id="save_gave" class="save_btn">Save</button>
+                    <button id="save_gave" class="save_btn">Save</button>
+                </div>
+
             </div>
             <div id="modal-you-got" class="modal-section">
                 <h5 id="heading_yougavegot">You Got</h5>
+                <div class="form-content">
+                    <label>Amount</label>
+                    <input type="number" id="got_amount">
 
-                <label>Amount</label>
-                <input type="number" id="got_amount">
-
-                <label>Description</label>
-                <input type="text" id="got_description">
-                <label>Date</label>
-                <input type="date" id="got_date">
-                <div class="save_btns_got">
-                    <button id="save_got" class="save_btn">Save only</button>
-                    <button id="save_got_reflect" class="save_btn">Save & reduce expenditure</button>
+                    <label>Description</label>
+                    <input type="text" id="got_description">
+                    <label>Date</label>
+                    <input type="date" id="got_date">
+                    <div class="save_btns_got">
+                        <button id="save_got" class="save_btn">Save only</button>
+                        <button id="save_got_reflect" class="save_btn">Save & reduce expenditure</button>
+                    </div>
                 </div>
 
-                
+
+
+
 
             </div>
         </div>
@@ -262,28 +268,29 @@
         </div>
     </div>
 
-    
 
-<!-- Firebase SDK -->
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 
-<script>
-const firebaseConfig = {
-  apiKey: "AIzaSyCpc4JOtlja8-BS9B51SKMayXbs8A8b_hg",
-  authDomain: "cashxcel-expense-tracker.firebaseapp.com",
-  projectId: "cashxcel-expense-tracker",
-  storageBucket: "cashxcel-expense-tracker.firebasestorage.app",
-  messagingSenderId: "1082310746790",
-  appId: "1:1082310746790:web:572d482beba089f5550a67"
-};
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
 
-firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
-const db = firebase.firestore();
-</script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyCpc4JOtlja8-BS9B51SKMayXbs8A8b_hg",
+            authDomain: "cashxcel-expense-tracker.firebaseapp.com",
+            projectId: "cashxcel-expense-tracker",
+            storageBucket: "cashxcel-expense-tracker.firebasestorage.app",
+            messagingSenderId: "1082310746790",
+            appId: "1:1082310746790:web:572d482beba089f5550a67"
+        };
 
-<script src="script.js"></script>
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+    </script>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
